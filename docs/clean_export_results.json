@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "source": "Reviewed Git index; no private local state copied",
+  "indexed_files": 56,
+  "index_content_sha256": "24dc5b3b5210edbdc03a25aa1207753623349cfaa2528150c00e7fa4984eac39",
+  "platform": "Windows",
+  "python": "3.12.0",
+  "checks": [
+    {
+      "name": "Python unittest",
+      "tests": 102,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "seconds": 30.291
+    },
+    {
+      "name": "UI fixtures",
+      "command": [
+        "python",
+        "-m",
+        "scripts.make_ui_fixture"
+      ],
+      "passed": true,
+      "seconds": 1.113
+    },
+    {
+      "name": "JavaScript tests",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/ui.test.cjs"
+      ],
+      "passed": true,
+      "seconds": 6.633,
+      "tests": 42,
+      "passed_tests": 42,
+      "failures": 0
+    },
+    {
+      "name": "Controller syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/app.js"
+      ],
+      "passed": true,
+      "seconds": 0.184
+    },
+    {
+      "name": "Experience syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/experience.js"
+      ],
+      "passed": true,
+      "seconds": 0.285
+    },
+    {
+      "name": "CLI lifecycle",
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify_cli"
+      ],
+      "passed": true,
+      "seconds": 2.786
+    }
+  ],
+  "windows_launcher": {
+    "command": "Start-Recording.cmd --port 0",
+    "platform": "Windows",
+    "isolated_export": true,
+    "http_status": 200,
+    "units": 86880,
+    "completed": 115,
+    "held": 6,
+    "passed": true
+  },
+  "snapshot_note": "Index digest identifies the tested export; later edits add verification evidence/documentation and remove one trailing blank line from a test file. No implementation or test logic changed."
+}

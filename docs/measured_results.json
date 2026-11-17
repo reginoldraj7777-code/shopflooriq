@@ -1,0 +1,601 @@
+{
+  "python": "3.12.0",
+  "platform": "Windows",
+  "seed": 1042,
+  "initialization_ms": 1279.37,
+  "full_snapshot_ms": 154.39,
+  "database_bytes": 1482752,
+  "initial_source_rows": 2574,
+  "initial_findings": 10,
+  "all_days_before": {
+    "orders": 644,
+    "closed": 643,
+    "completed": 637,
+    "held": 6,
+    "incomplete": 1,
+    "units": 494640,
+    "elapsed": 93.3,
+    "late_count": 208,
+    "late_share": 32.7,
+    "coverage": 99.1,
+    "checks": 637,
+    "passed_checks": 611,
+    "check_rate": 95.9
+  },
+  "last_14_days_before": {
+    "orders": 122,
+    "closed": 121,
+    "completed": 115,
+    "held": 6,
+    "incomplete": 1,
+    "units": 86880,
+    "elapsed": 93.6,
+    "late_count": 39,
+    "late_share": 33.9,
+    "coverage": 95.0,
+    "checks": 115,
+    "passed_checks": 110,
+    "check_rate": 95.7
+  },
+  "last_14_days_after": {
+    "orders": 122,
+    "closed": 121,
+    "completed": 116,
+    "held": 5,
+    "incomplete": 1,
+    "units": 87600,
+    "elapsed": 94.4,
+    "late_count": 40,
+    "late_share": 34.5,
+    "coverage": 95.9,
+    "checks": 116,
+    "passed_checks": 111,
+    "check_rate": 95.7
+  },
+  "evaluation": {
+    "methods": [
+      {
+        "name": "Fixed wait threshold",
+        "key": "rule",
+        "tp": 3,
+        "fp": 0,
+        "fn": 3,
+        "tn": 199,
+        "evaluated": 205,
+        "unavailable": 0,
+        "precision": 1.0,
+        "recall": 0.5
+      },
+      {
+        "name": "Station-aware median / MAD",
+        "key": "robust",
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "tn": 199,
+        "evaluated": 205,
+        "unavailable": 0,
+        "precision": 1.0,
+        "recall": 1.0
+      }
+    ],
+    "training": 432,
+    "testing": 205,
+    "baselines": {
+      "FILL-01": {
+        "median": 22.0,
+        "mad": 3.5,
+        "n": 144
+      },
+      "PACK-02": {
+        "median": 28.0,
+        "mad": 3.5,
+        "n": 144
+      },
+      "PACK-03": {
+        "median": 32.0,
+        "mad": 4.0,
+        "n": 144
+      }
+    },
+    "positives": 6,
+    "excluded": 7,
+    "split": "2026-10-23",
+    "stress": {
+      "protocol": "stress-v1",
+      "seeds": [
+        11,
+        29,
+        47,
+        83,
+        101
+      ],
+      "conditions": [
+        {
+          "key": "overlap",
+          "name": "Overlapping waits",
+          "description": "Ordinary variation overlaps small and large injected delays.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 75,
+              "fp": 7,
+              "fn": 25,
+              "tn": 893,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.9146341463414634,
+              "recall": 0.75,
+              "false_positive_rate": 0.0077777777777777776
+            },
+            {
+              "threshold": 3.5,
+              "tp": 52,
+              "fp": 1,
+              "fn": 48,
+              "tn": 899,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.9811320754716981,
+              "recall": 0.52,
+              "false_positive_rate": 0.0011111111111111111
+            },
+            {
+              "threshold": 4.5,
+              "tp": 33,
+              "fp": 0,
+              "fn": 67,
+              "tn": 900,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 1.0,
+              "recall": 0.33,
+              "false_positive_rate": 0.0
+            }
+          ],
+          "fixed": {
+            "tp": 19,
+            "fp": 0,
+            "fn": 81,
+            "tn": 900,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 100,
+            "prevalence": 0.1,
+            "precision": 1.0,
+            "recall": 0.19,
+            "false_positive_rate": 0.0
+          },
+          "training_per_seed": 120,
+          "testing": 1000
+        },
+        {
+          "key": "shift",
+          "name": "Benign operating shift",
+          "description": "Test-period normal waits shift +12 minutes; frozen training cannot adapt.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 96,
+              "fp": 293,
+              "fn": 4,
+              "tn": 607,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.2467866323907455,
+              "recall": 0.96,
+              "false_positive_rate": 0.32555555555555554
+            },
+            {
+              "threshold": 3.5,
+              "tp": 86,
+              "fp": 71,
+              "fn": 14,
+              "tn": 829,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.5477707006369427,
+              "recall": 0.86,
+              "false_positive_rate": 0.07888888888888888
+            },
+            {
+              "threshold": 4.5,
+              "tp": 76,
+              "fp": 12,
+              "fn": 24,
+              "tn": 888,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.8636363636363636,
+              "recall": 0.76,
+              "false_positive_rate": 0.013333333333333334
+            }
+          ],
+          "fixed": {
+            "tp": 65,
+            "fp": 2,
+            "fn": 35,
+            "tn": 898,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 100,
+            "prevalence": 0.1,
+            "precision": 0.9701492537313433,
+            "recall": 0.65,
+            "false_positive_rate": 0.0022222222222222222
+          },
+          "training_per_seed": 120,
+          "testing": 1000
+        },
+        {
+          "key": "rare",
+          "name": "Rare deviations",
+          "description": "Only 1% injected deviations; ordinary long tails can dominate alerts.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 8,
+              "fp": 73,
+              "fn": 2,
+              "tn": 917,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 10,
+              "prevalence": 0.01,
+              "precision": 0.09876543209876543,
+              "recall": 0.8,
+              "false_positive_rate": 0.07373737373737374
+            },
+            {
+              "threshold": 3.5,
+              "tp": 7,
+              "fp": 53,
+              "fn": 3,
+              "tn": 937,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 10,
+              "prevalence": 0.01,
+              "precision": 0.11666666666666667,
+              "recall": 0.7,
+              "false_positive_rate": 0.05353535353535353
+            },
+            {
+              "threshold": 4.5,
+              "tp": 3,
+              "fp": 39,
+              "fn": 7,
+              "tn": 951,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 10,
+              "prevalence": 0.01,
+              "precision": 0.07142857142857142,
+              "recall": 0.3,
+              "false_positive_rate": 0.03939393939393939
+            }
+          ],
+          "fixed": {
+            "tp": 1,
+            "fp": 28,
+            "fn": 9,
+            "tn": 962,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 10,
+            "prevalence": 0.01,
+            "precision": 0.034482758620689655,
+            "recall": 0.1,
+            "false_positive_rate": 0.028282828282828285
+          },
+          "training_per_seed": 120,
+          "testing": 1000
+        },
+        {
+          "key": "zero",
+          "name": "Zero MAD",
+          "description": "Identical training waits; a one-minute normal departure triggers the sentinel.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 100,
+              "fp": 228,
+              "fn": 0,
+              "tn": 672,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.3048780487804878,
+              "recall": 1.0,
+              "false_positive_rate": 0.25333333333333335
+            },
+            {
+              "threshold": 3.5,
+              "tp": 100,
+              "fp": 228,
+              "fn": 0,
+              "tn": 672,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.3048780487804878,
+              "recall": 1.0,
+              "false_positive_rate": 0.25333333333333335
+            },
+            {
+              "threshold": 4.5,
+              "tp": 100,
+              "fp": 228,
+              "fn": 0,
+              "tn": 672,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.3048780487804878,
+              "recall": 1.0,
+              "false_positive_rate": 0.25333333333333335
+            }
+          ],
+          "fixed": {
+            "tp": 28,
+            "fp": 0,
+            "fn": 72,
+            "tn": 900,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 100,
+            "prevalence": 0.1,
+            "precision": 1.0,
+            "recall": 0.28,
+            "false_positive_rate": 0.0
+          },
+          "training_per_seed": 120,
+          "testing": 1000
+        },
+        {
+          "key": "small",
+          "name": "Low sample",
+          "description": "Only 12 training records; robust scoring must abstain.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "evaluated": 0,
+              "unavailable": 1000,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": null,
+              "recall": null,
+              "false_positive_rate": null
+            },
+            {
+              "threshold": 3.5,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "evaluated": 0,
+              "unavailable": 1000,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": null,
+              "recall": null,
+              "false_positive_rate": null
+            },
+            {
+              "threshold": 4.5,
+              "tp": 0,
+              "fp": 0,
+              "fn": 0,
+              "tn": 0,
+              "evaluated": 0,
+              "unavailable": 1000,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": null,
+              "recall": null,
+              "false_positive_rate": null
+            }
+          ],
+          "fixed": {
+            "tp": 20,
+            "fp": 0,
+            "fn": 80,
+            "tn": 900,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 100,
+            "prevalence": 0.1,
+            "precision": 1.0,
+            "recall": 0.2,
+            "false_positive_rate": 0.0
+          },
+          "training_per_seed": 12,
+          "testing": 1000
+        },
+        {
+          "key": "tails",
+          "name": "Heavy normal tails",
+          "description": "Unlabeled long waits overlap injected delays; labels are simulation truth, not causes.",
+          "thresholds": [
+            {
+              "threshold": 2.5,
+              "tp": 78,
+              "fp": 74,
+              "fn": 22,
+              "tn": 826,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.5131578947368421,
+              "recall": 0.78,
+              "false_positive_rate": 0.08222222222222222
+            },
+            {
+              "threshold": 3.5,
+              "tp": 57,
+              "fp": 56,
+              "fn": 43,
+              "tn": 844,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.504424778761062,
+              "recall": 0.57,
+              "false_positive_rate": 0.06222222222222222
+            },
+            {
+              "threshold": 4.5,
+              "tp": 32,
+              "fp": 42,
+              "fn": 68,
+              "tn": 858,
+              "evaluated": 1000,
+              "unavailable": 0,
+              "positives": 100,
+              "prevalence": 0.1,
+              "precision": 0.43243243243243246,
+              "recall": 0.32,
+              "false_positive_rate": 0.04666666666666667
+            }
+          ],
+          "fixed": {
+            "tp": 21,
+            "fp": 31,
+            "fn": 79,
+            "tn": 869,
+            "evaluated": 1000,
+            "unavailable": 0,
+            "positives": 100,
+            "prevalence": 0.1,
+            "precision": 0.40384615384615385,
+            "recall": 0.21,
+            "false_positive_rate": 0.034444444444444444
+          },
+          "training_per_seed": 120,
+          "testing": 1000
+        }
+      ],
+      "examples": [
+        {
+          "condition": "overlap",
+          "outcome": "false_positive",
+          "seed": 11,
+          "test_index": 39,
+          "wait": 50.88,
+          "score": 3.77,
+          "label": false
+        },
+        {
+          "condition": "overlap",
+          "outcome": "false_negative",
+          "seed": 11,
+          "test_index": 70,
+          "wait": 38.69,
+          "score": 1.43,
+          "label": true
+        },
+        {
+          "condition": "shift",
+          "outcome": "false_positive",
+          "seed": 11,
+          "test_index": 11,
+          "wait": 49.61,
+          "score": 3.52,
+          "label": false
+        },
+        {
+          "condition": "shift",
+          "outcome": "false_negative",
+          "seed": 11,
+          "test_index": 110,
+          "wait": 48.59,
+          "score": 3.33,
+          "label": true
+        },
+        {
+          "condition": "rare",
+          "outcome": "false_positive",
+          "seed": 11,
+          "test_index": 21,
+          "wait": 52.07,
+          "score": 4.0,
+          "label": false
+        },
+        {
+          "condition": "rare",
+          "outcome": "false_negative",
+          "seed": 29,
+          "test_index": 100,
+          "wait": 37.72,
+          "score": 1.29,
+          "label": true
+        },
+        {
+          "condition": "zero",
+          "outcome": "false_positive",
+          "seed": 11,
+          "test_index": 1,
+          "wait": 31,
+          "score": 999,
+          "label": false
+        },
+        {
+          "condition": "tails",
+          "outcome": "false_positive",
+          "seed": 11,
+          "test_index": 17,
+          "wait": 54.83,
+          "score": 4.53,
+          "label": false
+        },
+        {
+          "condition": "tails",
+          "outcome": "false_negative",
+          "seed": 11,
+          "test_index": 30,
+          "wait": 45.5,
+          "score": 2.73,
+          "label": true
+        }
+      ],
+      "total_testing": 6000,
+      "chronology": "Each run fits only its first training segment, then scores a separate future segment. Labels never enter fit or score. Thresholds are sensitivity checks, not selected on test results."
+    }
+  },
+  "hero_after": {
+    "order_id": "WO-1042",
+    "day": "2026-11-15",
+    "station": "FILL-01",
+    "shift": "Early",
+    "product": "SKU-B250",
+    "state": "closed",
+    "trust": "trusted",
+    "units": 720,
+    "elapsed": 190.0,
+    "wait": 140.0,
+    "late": 1,
+    "due": "2026-11-15T07:50:00+00:00",
+    "completed": "2026-11-15T09:10:00+00:00"
+  }
+}

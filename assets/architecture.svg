@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">ShopfloorIQ evidence-to-decision architecture</title>
+  <desc id="desc">Synthetic source events enter SQLite, pass validation and become trusted facts or held orders. Alex proposes a separate receipt; Sam independently approves it in an atomic transaction. The operational investigation remains open and passes to shift handover.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#9aaa9e" stroke-width="1.3"/></marker>
+    <style>text{font-family:Segoe UI,Arial,sans-serif}.label{font-size:12px;letter-spacing:2px;fill:#b7cabc}.title{font-size:23px;font-weight:600;fill:#eff5ef}.body{font-size:16px;fill:#bed0c5}.box{fill:#163c30;stroke:#356051}.line{stroke:#9aaa9e;stroke-width:2;fill:none;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="680" rx="24" fill="#102d24"/>
+  <text x="44" y="48" class="label">SHOPFLOORIQ / SYSTEM MAP</text>
+  <text x="44" y="94" font-size="36" font-weight="650" fill="#eff5ef">Evidence first. Decisions stay traceable.</text>
+  <text x="44" y="126" class="body">Independent synthetic prototype · Python + SQLite + a buildless browser interface</text>
+  <rect x="44" y="178" width="250" height="132" rx="12" class="box"/>
+  <text x="66" y="207" class="label">01 / RETAIN</text>
+  <text x="66" y="243" class="title">Source evidence</text>
+  <text x="66" y="274" class="body">Raw rows + fingerprints</text>
+  <path d="M294 244 H344" class="line"/>
+  <rect x="354" y="178" width="250" height="132" rx="12" class="box"/>
+  <text x="376" y="207" class="label">02 / CHECK</text>
+  <text x="376" y="243" class="title">Validate each order</text>
+  <text x="376" y="274" class="body">10 explicit quality rules</text>
+  <path d="M604 244 H654" class="line"/>
+  <rect x="664" y="178" width="492" height="132" rx="12" fill="#c5e878"/>
+  <text x="686" y="207" font-size="12" letter-spacing="2" fill="#315133">03 / REPORT</text>
+  <text x="686" y="243" font-size="23" font-weight="650" fill="#102d24">Trusted metrics + source drill-down</text>
+  <text x="686" y="274" font-size="16" fill="#315133">115 → 116 completed orders · 86,880 → 87,600 units</text>
+  <path d="M479 310 V347" class="line"/>
+  <rect x="354" y="358" width="250" height="110" rx="12" fill="#453d25" stroke="#8f7a41"/>
+  <text x="376" y="393" font-size="21" font-weight="600" fill="#f2dda8">Held evidence</text>
+  <text x="376" y="425" class="body">Visible, excluded, inspectable</text>
+  <rect x="44" y="358" width="250" height="208" rx="12" class="box"/>
+  <text x="66" y="392" class="label">HUMAN REVIEW</text>
+  <text x="66" y="430" class="title">BUF-1042 receipt</text>
+  <text x="66" y="463" class="body">Alex proposes; Sam approves</text>
+  <text x="66" y="493" class="body">Append + validate + audit</text>
+  <text x="66" y="523" class="body">One atomic transaction</text>
+  <path d="M354 412 H304" class="line"/>
+  <path d="M169 358 V321" class="line"/>
+  <rect x="664" y="358" width="492" height="208" rx="12" class="box"/>
+  <text x="686" y="392" class="label">A SEPARATE OPERATIONAL QUESTION</text>
+  <text x="686" y="430" class="title">The 140-minute wait remains.</text>
+  <text x="686" y="463" class="body">INC-1043 stays open. Cause is not established.</text>
+  <text x="686" y="493" class="body">Owner + missing information + source-linked next step</text>
+  <text x="686" y="523" class="body">→ Shift Handover</text>
+  <path d="M910 310 V347" class="line"/>
+  <path d="M44 608 H1156" stroke="#356051"/>
+  <text x="44" y="643" class="body">More complete reporting can reveal worse performance. Recovery does not establish a root cause.</text>
+</svg>

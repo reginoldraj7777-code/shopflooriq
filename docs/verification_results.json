@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-16T21:37:35.545554+00:00",
+  "platform": "Windows",
+  "python": "3.12.0",
+  "checks": [
+    {
+      "name": "Python unittest",
+      "tests": 102,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "seconds": 34.478
+    },
+    {
+      "name": "UI fixtures",
+      "command": [
+        "python",
+        "-m",
+        "scripts.make_ui_fixture"
+      ],
+      "passed": true,
+      "seconds": 1.172
+    },
+    {
+      "name": "JavaScript tests",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/ui.test.cjs"
+      ],
+      "passed": true,
+      "seconds": 6.738,
+      "tests": 42,
+      "passed_tests": 42,
+      "failures": 0
+    },
+    {
+      "name": "Controller syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/app.js"
+      ],
+      "passed": true,
+      "seconds": 0.07
+    },
+    {
+      "name": "Experience syntax",
+      "command": [
+        "node",
+        "--check",
+        "web/experience.js"
+      ],
+      "passed": true,
+      "seconds": 0.057
+    },
+    {
+      "name": "CLI lifecycle",
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify_cli"
+      ],
+      "passed": true,
+      "seconds": 0.931
+    }
+  ],
+  "existing_databases_unchanged": true,
+  "passed": true
+}

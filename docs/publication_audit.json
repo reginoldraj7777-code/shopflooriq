@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "indexed_files": 67,
+  "relative_links_checked": 88,
+  "commits_checked": 0,
+  "historical_blobs_checked": 0,
+  "remotes_configured": 0,
+  "issues": [],
+  "scope": "Git index and all locally reachable commits; Markdown file targets, not external URLs or anchors.",
+  "limits": "Pattern scan is not proof that all secrets or personal information are absent. Review assets manually."
+}

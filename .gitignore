@@ -1,0 +1,44 @@
+# Local state must never enter the public repository, at any depth.
+data/
+backups/
+test-results/
+.runtime/
+*.sqlite*
+*.db
+*.db-*
+*.log
+
+# Private planning and local preservation evidence (keep on disk).
+ShopfloorIQ_Codex_Master_Brief.md
+demo/followup_notes.md
+docs/preservation_check.json
+scripts/check_preservation.py
+
+# Credentials, workstation configuration and caches.
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+.aws/
+.codex/
+.agents/
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+.coverage*
+htmlcov/
+.DS_Store
+Thumbs.db
+
+# Recordings are reviewed separately; no unapproved video in this package.
+*.mp4
+*.mov
+*.mkv
+*.webm
+README_VISUAL_INSERT.md
